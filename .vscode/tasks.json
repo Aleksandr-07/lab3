@@ -1,0 +1,32 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: g++.exe сборка активного файла",
+			"command": "C:\\msys64\\mingw64\\bin\\g++.exe",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g",
+				"${file}",
+				"-o",
+				"${fileDirname}\\${fileBasenameNoExtension}.exe",
+				"-I C:\\msys64\\mingw64\\include\\boost", // добавленные мною директивы компилятора, может потребоваться корректировка 
+				"-L C:\\msys64\\mingw64\\lib",            // 
+				"-lboost_thread-mt",                      // 
+				"-lpthread"                               //
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "компилятор: C:\\msys64\\mingw64\\bin\\g++.exe"
+		}
+	]
+}
